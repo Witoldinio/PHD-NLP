@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Tokenizer";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Please enter your sentence:</p>
+    <input type="text" name="sentence" id="sentence"/>
+    <button id="send">Send</button>
+    <div id="results"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#send').click(function () {
+            $('#results').load('Tokenize', { sentence: $('#sentence').val() });
+        });
+    });
+</script>
